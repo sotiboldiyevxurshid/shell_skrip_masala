@@ -8,5 +8,3 @@ for arg in "$@"; do
   # Print the argument and its length
   echo "Length of '$arg' is $length"
 done
-
-

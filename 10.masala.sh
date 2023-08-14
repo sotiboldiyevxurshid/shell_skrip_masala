@@ -21,4 +21,4 @@ for ((i = 1; i < ${#number}; i++)); do
 done
 
 # Display the final result
-echo "Result: $result"
+echo "Result: $result" 
