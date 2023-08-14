@@ -1,24 +1,30 @@
 #!/bin/bash
 
-# Read the number and operator from the user
-read -p "Enter a number: " number
-read -p "Enter an operator (+, -, *, /): " operator
+# Read the input number from the user
+read -p "Enter the number: " input
 
-# Initialize the result based on the first digit
-result="${number:0:1}"
+# Extract the digits and operator
+digits="${input%?}"    # Remove the last character
+operator="${input: -1}" # Get the last character
 
-# Loop through the remaining digits and perform the operation
-for ((i = 1; i < ${#number}; i++)); do
-  digit="${number:$i:1}"
+# Initialize the result with the first digit
+result="${digits:0:1}"
+
+# Iterate over the remaining digits
+for ((i = 1; i < ${#digits}; i++)); do
+  digit="${digits:$i:1}"
   
-  case "$operator" in
-    +) result=$((result + digit)) ;;
+  case $operator in
+    +) result=$((result + digit )) ;;
     -) result=$((result - digit)) ;;
     \*) result=$((result * digit)) ;;
     /) result=$((result / digit)) ;;
-    *) echo "Invalid operator: $operator"; exit 1 ;;
+    *) echo "Error "; exit 1 ;;
   esac
 done
 
-# Display the final result
-echo "Result: $result" 
+# Print the final result
+echo "Sum: $result"
+
+
+
