@@ -15,16 +15,15 @@ for ((i = 1; i < ${#digits}; i++)); do
   digit="${digits:$i:1}"
   
   case $operator in
-    +) result=$((result + digit )) ;;
+    +) result=$((result + digit)) ;;
     -) result=$((result - digit)) ;;
     \*) result=$((result * digit)) ;;
     /) result=$((result / digit)) ;;
-    *) echo "Error "; exit 1 ;;
+    *) echo "Error"; exit 1 ;;
   esac
 done
 
 # Print the final result
 echo "Sum: $result"
-
 
 
