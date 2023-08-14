@@ -1,25 +1,10 @@
 #!/bin/bash
 
-echo "Enter Size(N)"
-read N
+[ $# -eq 0 ] && echo "Xato: Argumentlar berilmagan." && exit 1
 
-i=1
-max=0
-
-echo "Enter Numbers"
-while [ $i -le $N ]
-do
-  read num
-  if [ $i -eq 1 ]  #set first number as max
-  then
-      max=$num
-  else             #from number 2 update max if the num > max.
-      if [ $num -gt $max ]
-      then
-        max=$num
-      fi
-  fi
-  i=$((i + 1))  #increment i by 1
+eng_katta=$1
+for arg in "$@"; do
+  [ "$arg" -gt "$eng_katta" ] && eng_katta="$arg"
 done
 
-echo "Raqam $max"
+echo "Eng katta: $eng_katta"
