@@ -46,4 +46,7 @@ echo "Reversed number is3 : $num"
 
 
 
-open https://tecadmin.net/bash-script-to-reverse-a-number/
+ s="https://tecadmin.net/bash-script-to-reverse-a-number/"
+
+ 
+ echo $s
